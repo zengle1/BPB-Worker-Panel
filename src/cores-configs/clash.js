@@ -273,7 +273,7 @@ function buildClashVLESSOutbound (remark, address, port, host, sni, path, allowI
     if (tls) {
         Object.assign(outbound, {
             "servername": sni,
-            "alpn": ["http/1.1"],
+            "alpn": [""],
             "client-fingerprint": "random",
             "skip-cert-verify": allowInsecure
         });
@@ -299,7 +299,7 @@ function buildClashTrojanOutbound (remark, address, port, host, sni, path, allow
             "early-data-header-name": "Sec-WebSocket-Protocol"
         },
         "sni": sni,
-        "alpn": ["http/1.1"],
+        "alpn": [""],
         "client-fingerprint": "random",
         "skip-cert-verify": allowInsecure
     };
